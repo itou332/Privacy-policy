@@ -2,13 +2,15 @@
 -<a href="https://itou332.github.io/">1項目</a>
 -<a href="https://itou332.github.io/itou332a.github.io/">2項目</a>
 -<a href="https://itou332.github.io/diary">3項目</a>
--<a href="https://itou332.github.io/today">3項目</a>
+-<a href="https://itou332.github.io/today">4項目</a>
 -<a href="https://github.com/itou332">my github</a>
 -<a href="http://itou33good.starfree.jp/">itou</a>
 
-<p>【私の絵の記録】 プライバシーポリシー
+
+
+<p> 私の絵の記録 プライバシーポリシー
   
-   【私の絵の記録】(以下「当ブログ」)のプライバシーポリシー・免責事項を次の通り記載します。
+    私の絵の記録 (以下「当ブログ」)のプライバシーポリシー・免責事項を次の通り記載します。
   
     個人情報の利用目的について
 
@@ -128,7 +130,7 @@
 -<a href="https://itou332.github.io/">1項目</a>
 -<a href="https://itou332.github.io/itou332a.github.io/">2項目</a>
 -<a href="https://itou332.github.io/diary">3項目</a>
--<a href="https://itou332.github.io/today">3項目</a>
+-<a href="https://itou332.github.io/today">4項目</a>
 -<a href="https://github.com/itou332">my github</a>
 -<a href="http://itou33good.starfree.jp/">itou</a>
   </p>

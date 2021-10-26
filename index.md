@@ -1,17 +1,18 @@
+ <hedar>
    *献立
 -<a href="https://itou332.github.io/">1項目</a>
 -<a href="https://itou332.github.io/itou332a.github.io/">2項目</a>
 -<a href="https://itou332.github.io/diary">3項目</a>
--<a href="https://itou332.github.io/today">4項目</a>
+-<a href="https://itou332.github.io/Privacy-policy/">免責事項</a>
 -<a href="https://github.com/itou332">my github</a>
 -<a href="http://itou33good.starfree.jp/">itou</a>
+</hedar>
 
+<body>
+<h2>私の絵の記録 プライバシーポリシー</h2>
 
+<p>私の絵の記録 (以下「当ブログ」)のプライバシーポリシー・免責事項を次の通り記載します。</p>
 
-<p> 私の絵の記録 プライバシーポリシー
-  
-    私の絵の記録 (以下「当ブログ」)のプライバシーポリシー・免責事項を次の通り記載します。
-  
     個人情報の利用目的について
 
     当ブログでは、お問い合わせやコメント投稿の際に氏名・メールアドレス等の個人情報を入力いただく場合があります。
@@ -125,12 +126,14 @@
 
     Blog Name:私の絵の記録
     Handle Name:itou332
-
+</p>
+</body>
+<footer>
 *献立
 -<a href="https://itou332.github.io/">1項目</a>
 -<a href="https://itou332.github.io/itou332a.github.io/">2項目</a>
 -<a href="https://itou332.github.io/diary">3項目</a>
--<a href="https://itou332.github.io/today">4項目</a>
+-<a href="https://itou332.github.io/Privacy-policy/">免責事項</a>
 -<a href="https://github.com/itou332">my github</a>
 -<a href="http://itou33good.starfree.jp/">itou</a>
-  </p>
+</footer>

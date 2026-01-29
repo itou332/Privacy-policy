@@ -142,51 +142,42 @@
 
     <hr>
 <script>
-{
-  const displayLocation = () => {
-    const target = document.querySelector('#current-loc');
-    if (!target) return;
-
-    // 現在のURL（小文字）
-    const url = window.location.href.toLowerCase();
-
-    // 設定リスト：URLに含まれる「キーワード」と、表示したい「ID」のペア
-    const rules = [
-      { key: 'privacy-policy', id: 'notice' },
-      { key: 'castanea',       id: '16' },
-      { key: 'thujopsis',      id: '15' },
-      { key: 'cypress',       id: '14' },
-      { key: 'pulm',          id: '13' },
-      { key: 'banboo',        id: '12' },
-      { key: 'pine',          id: '11' },
-      { key: 'walk',          id: '10' },
-      { key: 'culture',       id: '09' },
-      { key: 'analog',        id: '08' },
-      { key: 'elaboration',   id: '07' },
-      { key: 'nontitle',      id: '06' },
-      { key: 'challenge',     id: '05' },
-      { key: 'today',         id: '04' },
-      { key: 'diary',         id: '03' },
-      { key: 'itou332a',      id: '02' },
-      { key: 'itou332',       id: '01' },
-      { key: 'top_page',      id: '00' }
-    ];
-
-    // URLにキーワードが含まれている最初の1つを探す
-    const match = rules.find(rule => url.includes(rule.key));
-    
-    // 見つかればそのID、なければ00を表示
-    const finalId = match ? match.id : "00";
-    target.textContent = `root / ${finalId}`;
+(function() {
+  const pageMap = {
+    "privacy-policy": "notice",
+    "castanea": "16", "thujopsis": "15", "cypress": "14", "pulm": "13",
+    "banboo": "12", "pine": "11", "walk": "10", "culture": "09",
+    "analog": "08", "elaboration": "07", "nontitle": "06", "challenge": "05",
+    "today": "04", "diary": "03", "itou332a": "02", "itou332": "01", "top_page": "00"
   };
 
-  // ページ読み込みが終わったら実行
-  if (document.readyState === 'complete') {
-    displayLocation();
-  } else {
-    window.addEventListener('load', displayLocation);
-  }
-}
+  const update = () => {
+    // クラス名でもID名でも、とにかくそれっぽい場所を全部探して書き換える
+    const elements = document.querySelectorAll('#current-loc, .void-location');
+    const url = window.location.href.toLowerCase();
+    
+    let id = "00";
+    for (const key in pageMap) {
+      if (url.includes(key)) {
+        id = pageMap[key];
+        break;
+      }
+    }
+
+    elements.forEach(el => {
+      el.textContent = `root / ${id}`;
+    });
+  };
+
+  // 1. 即座に実行
+  update();
+  // 2. 0.1秒後にもう一度（リダイレクトや他の処理対策）
+  setTimeout(update, 100);
+  // 3. 0.5秒後にもう一度（念のため）
+  setTimeout(update, 500);
+  // 4. 読み込み完了時
+  window.addEventListener('load', update);
+})();
 </script>
 <nav aria-label="site-menu" class="void-nav">
   <!-- ページごとにここを書き換える（例：12番のページなら root / 12） -->
@@ -227,4 +218,5 @@
     </div>
 </body>
 </html>
+
 

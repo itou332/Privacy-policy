@@ -146,13 +146,6 @@
       const path = window.location.pathname;
       const loc = document.getElementById('current-loc');
       const currentFullUrl = window.location.href;
-
-for (const key in pageMap) {
-  if (currentFullUrl.includes(key)) { // pathnameではなくURL全体で比較
-    id = pageMap[key];
-    break;
-  }
-}
       
       // 全パターンを網羅したマップ
       const pageMap = {
@@ -177,6 +170,13 @@ for (const key in pageMap) {
       };
 
       let id = "00";
+
+      for (const key in pageMap) {
+  if (currentFullUrl.includes(key)) { // pathnameではなくURL全体で比較
+    id = pageMap[key];
+    break;
+  }
+}
       
       for (const key in pageMap) {
         if (path.includes(key)) {

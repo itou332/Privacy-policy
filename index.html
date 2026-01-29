@@ -171,15 +171,10 @@
 
       let id = "00";
 
+      // 判定はこれ1回だけでOK
       for (const key in pageMap) {
-  if (currentFullUrl.includes(key)) { // pathnameではなくURL全体で比較
-    id = pageMap[key];
-    break;
-  }
-}
-      
-      for (const key in pageMap) {
-        if (path.includes(key)) {
+        // 大文字小文字を無視して判定するために toLowerCase() を使うのがおすすめ
+        if (currentFullUrl.toLowerCase().includes(key.toLowerCase())) {
           id = pageMap[key];
           break;
         }

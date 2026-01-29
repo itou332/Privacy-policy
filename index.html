@@ -145,6 +145,15 @@
     (function() {
       const path = window.location.pathname;
       const loc = document.getElementById('current-loc');
+      // window.location.href を使えばドメイン名も検索対象になります
+const currentFullUrl = window.location.href;
+
+for (const key in pageMap) {
+  if (currentFullUrl.includes(key)) { // pathnameではなくURL全体で比較
+    id = pageMap[key];
+    break;
+  }
+}
       
       // 全パターンを網羅したマップ
       const pageMap = {

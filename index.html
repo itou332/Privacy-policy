@@ -142,10 +142,13 @@
 
     <hr>
   <script>
-    (function() {
-      const path = window.location.pathname;
-      const loc = document.getElementById('current-loc');
-      const currentFullUrl = window.location.href;
+  // 画面（DOM）が完全に読み込まれてから実行するように指示
+  window.addEventListener('DOMContentLoaded', function() {
+    const loc = document.getElementById('current-loc');
+    const currentFullUrl = window.location.href;
+    
+    // もし要素が見つからない場合はエラーにならないよう中断
+    if (!loc) return; 
       
       // 全パターンを網羅したマップ
       const pageMap = {

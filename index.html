@@ -141,51 +141,53 @@
 </section>
 
     <hr>
-  <script>
-  // 画面（DOM）が完全に読み込まれてから実行するように指示
-  window.addEventListener('DOMContentLoaded', function() {
-    const loc = document.getElementById('current-loc');
-    const currentFullUrl = window.location.href;
+<script>
+{
+  const displayLocation = () => {
+    const target = document.querySelector('#current-loc');
+    if (!target) return;
+
+    // 現在のURL（小文字）
+    const url = window.location.href.toLowerCase();
+
+    // 設定リスト：URLに含まれる「キーワード」と、表示したい「ID」のペア
+    const rules = [
+      { key: 'privacy-policy', id: 'notice' },
+      { key: 'castanea',       id: '16' },
+      { key: 'thujopsis',      id: '15' },
+      { key: 'cypress',       id: '14' },
+      { key: 'pulm',          id: '13' },
+      { key: 'banboo',        id: '12' },
+      { key: 'pine',          id: '11' },
+      { key: 'walk',          id: '10' },
+      { key: 'culture',       id: '09' },
+      { key: 'analog',        id: '08' },
+      { key: 'elaboration',   id: '07' },
+      { key: 'nontitle',      id: '06' },
+      { key: 'challenge',     id: '05' },
+      { key: 'today',         id: '04' },
+      { key: 'diary',         id: '03' },
+      { key: 'itou332a',      id: '02' },
+      { key: 'itou332',       id: '01' },
+      { key: 'top_page',      id: '00' }
+    ];
+
+    // URLにキーワードが含まれている最初の1つを探す
+    const match = rules.find(rule => url.includes(rule.key));
     
-    // もし要素が見つからない場合はエラーにならないよう中断
-    if (!loc) return; 
-      
-      // 全パターンを網羅したマップ
-      const pageMap = {
-        "top_page": "00",
-        "itou332": "01",
-        "itou332a": "02",
-        "diary": "03",
-        "today": "04",
-        "challenge": "05",
-        "nontitle": "06",
-        "elaboration": "07",
-        "analog": "08",
-        "culture": "09",
-        "walk": "10",
-        "pine": "11",
-        "banboo": "12",
-        "pulm": "13",
-        "cypress": "14",
-        "Thujopsis": "15",
-        "Castanea": "16",
-        "Privacy-policy": "notice"
-      };
+    // 見つかればそのID、なければ00を表示
+    const finalId = match ? match.id : "00";
+    target.textContent = `root / ${finalId}`;
+  };
 
-      let id = "00";
-
-      // 判定はこれ1回だけでOK
-      for (const key in pageMap) {
-        // 大文字小文字を無視して判定するために toLowerCase() を使うのがおすすめ
-        if (currentFullUrl.toLowerCase().includes(key.toLowerCase())) {
-          id = pageMap[key];
-          break;
-        }
-      }
-      
-      loc.textContent = `root / ${id}`;
-    })();
-  </script>
+  // ページ読み込みが終わったら実行
+  if (document.readyState === 'complete') {
+    displayLocation();
+  } else {
+    window.addEventListener('load', displayLocation);
+  }
+}
+</script>
 <nav aria-label="site-menu" class="void-nav">
   <!-- ページごとにここを書き換える（例：12番のページなら root / 12） -->
   <div class="void-location">root / 00</div>
@@ -225,3 +227,4 @@
     </div>
 </body>
 </html>
+
